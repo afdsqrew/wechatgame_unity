@@ -19,8 +19,8 @@ MonoBehaviour:
     assetLoadType: 1
     compressDataPackage: 0
     VideoUrl: 
-    relativeDST: D:/_svn_work/ECS2022.3NewGame_1/ECS/UnityOutput
-    DST: D:/_svn_work/ECS2022.3NewGame_1/ECS/UnityOutput
+    relativeDST: D:/_svn_work/WeChatGame/Output
+    DST: D:/_svn_work/WeChatGame/Output
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;

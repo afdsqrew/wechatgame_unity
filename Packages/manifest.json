@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "cn.tuanjie.ai.generators": "file:../.codely-cli/extensions/TJGenerators/Packages/cn.tuanjie.ai.generators",
     "cn.tuanjie.codely.bridge": "1.0.87",
     "com.unity.addressables": "1.22.3",
     "com.unity.collab-proxy": "2.7.1",
