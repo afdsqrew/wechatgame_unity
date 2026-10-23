@@ -1,0 +1,115 @@
+[Licensing::Module] Serial number assigned to: "ewogICJzdWJzR3JvdXAiIDogInVuaXR5IGVkaXRvciIsCiAgIm5hbWVzcGFjZSIgOiAidW5pdHlfZWRpdG9yIiwKICAidHlwZSIgOiAiRURJVE9SIiwKICAidGFnIiA6ICJVbml0eVBlcnNvbmFsXXXX"
+Asset Pipeline Refresh (id=1bd2b9a85bc478844a1f80b84f29d8c0): Total: 0.012 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+Asset Pipeline Refresh (id=6dcd43a4b7320a648b07146f5e95df5c): Total: 0.009 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+AssetDatabase: script compilation time: 0.002603s
+Start importing Assets/Scripts/DeepSeek/TextureInstanceRenderComponent.cs using Guid(70998a75512785549ab60a8062383e52) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '38dd518b4b1891c250d99ecf26da13b6') in 0.086701 seconds
+Start importing Assets/Scripts/DeepSeek/DrawMeshInstancedProcedural.cs using Guid(a319495f5079b514b91dde931d009e08) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e6da08816036c0b2294366d40456d9d0') in 0.004293 seconds
+Start importing Assets/Scripts/CSDN/GameObjectConversionUtility.cs using Guid(6fce95cd97c605e43a058abc69b74236) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'aafee735031574dff5e09024277d9caf') in 0.003536 seconds
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-YM2Y-VBDJ-BCGZ-PNEK-XXXX"
+[Licensing::Module] Serial number assigned to: "ewogICJzdWJzR3JvdXAiIDogInVuaXR5IGVkaXRvciIsCiAgIm5hbWVzcGFjZSIgOiAidW5pdHlfZWRpdG9yIiwKICAidHlwZSIgOiAiRURJVE9SIiwKICAidGFnIiA6ICJVbml0eVBlcnNvbmFsXXXX"
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Editor/Internals/Properties/Unity.Properties.Internals.asmref' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Hybrid.Tests/Baking/ExcludedAssemblyTest/Unity.Entities.Hybrid.Tests.ExcludedAssembly.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.mathematics@1.3.2/Tests/Unity.Mathematics.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.PerformanceTests/Unity.Entities.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Tests/InAnotherEmptyAssembly/Unity.Entities.Tests.InAnotherEmptyAssembly.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.addressables@1.22.3/Tests/Runtime/ResourceManager/Unity.ResourceManager.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Transforms.PerformanceTests/Unity.Transforms.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Transforms.Tests/Unity.Transforms.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.collections@2.6.8/DocCodeSamples.Tests/DocCodeSamples.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Editor.PerformanceTests/Unity.Entities.Editor.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Hybrid.Tests/Playmode/Unity.Scenes.Hybrid.Tests.Playmode.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Tests/Unity.Scenes.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.CodeGen.UntaggedAssemblyTests/Unity.Properties.CodeGen.UntaggedAssemblyTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.PerformanceTests/Unity.Properties.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.Reflection.Tests/Unity.Properties.Reflection.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.CodeGen.IntegrationTests.DependencyC/Unity.Properties.CodeGen.IntegrationTests.DependencyC.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.addressables@1.22.3/Tests/Runtime/Unity.Addressables.Runtime.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Editor.Tests/TypeDependencyCacheTestAssembly/TypeDependencyCacheTestAssembly.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.serialization@3.1.3/Tests/Unity.Serialization.Tests/Unity.Serialization.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.scriptablebuildpipeline@1.23.1/Tests/Runtime/Unity.ScriptableBuildPipeline.Runtime.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.collections@2.6.8/Unity.Collections.PerformanceTests/Unity.Collections.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.timeline@1.7.7/DocCodeExamples/DocCodeExamples.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.CodeGen.IntegrationTests.DependencyB/Unity.Properties.CodeGen.IntegrationTests.DependencyB.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Hybrid.EndToEnd.Tests/Unity.Entities.Hybrid.EndToEnd.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Hybrid.Tests/Editmode/Content/Unity.Scenes.Hybrid.Tests.Editmode.Content.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.collections@2.6.8/Unity.Collections.Tests/NativeSortTests.tt' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Tests/Content/ContentDeliveryTests/Unity.Entities.ContentDeliveryGlobalState.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Hybrid.Tests/Baking/SeparateAssembly/Unity.Entities.Hybrid.Tests.SeparateAssembly.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.Tests/Unity.Properties.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/DocCodeSamples.Tests/DocCodeSamples.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.CodeGen.IntegrationTests.DependencyA/Unity.Properties.CodeGen.IntegrationTests.DependencyA.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.properties@2.1.0-exp.3/Tests/Unity.Properties.CodeGen.IntegrationTests/Unity.Properties.CodeGen.IntegrationTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Transforms.Hybrid.Tests/Unity.Transforms.Hybrid.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.collections@2.6.8/Unity.Collections.Tests.Playmode/FixedListPlayModeTests.tt' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.serialization@3.1.3/Tests/Unity.Serialization.Editor.Tests/Unity.Serialization.Editor.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Hybrid.PerformanceTests/Unity.Entities.Hybrid.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Hybrid.Tests/Editmode/Unity.Scenes.Hybrid.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Burst.Tests/Unity.Burst.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.textmeshpro@3.0.7/Tests/Runtime/Unity.TextMeshPro.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities.graphics@1.4.8/Unity.Entities.Graphics.Tests/Unity.Entities.Graphics.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Tests/InAnotherAssembly/Unity.Entities.Tests.InAnotherAssembly.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Mathematics.Extensions.Tests/Unity.Mathematics.Extensions.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Hybrid.Tests/Unity.Entities.Hybrid.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.platforms@1.0.0-exp.6/Runtime/Unity.Platforms.RunLoop/Unity.Platforms.RunLoop.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Tests/Unity.Entities.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Editor.Tests/Unity.Scenes.Editor.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.TestComponents/Unity.TestComponents.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.Editor.PerformanceTests/Unity.Scenes.Editor.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.CodeGen.Tests/Unity.Entities.CodeGen.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.collections@2.6.8/Unity.Collections.BurstCompatibilityGen/Unity.Collections.BurstCompatibilityGen.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Entities.Editor.Tests/Unity.Entities.Editor.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.jobs@0.70.0-preview.7/Unity.Jobs.Tests/Unity.Jobs.Tests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Script 'Library/PackageCache/com.unity.entities@1.4.8/Unity.Scenes.PerformanceTests/Unity.Scenes.PerformanceTests.asmdef' will not be compiled because it exists outside the Assets folder and does not to belong to any assembly definition file.
+Refreshing native plugins compatible for Editor in 20.40 ms, found 20 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d0cbf2e3e3a5a6a42a1ae4e998868171): Total: 2.593 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=3 (actual=3, local cache=0, cache server=0)
+		Asset DB Process Time: managed=21 ms, native=810 ms
+		Asset DB Callback time: managed=1614 ms, native=143 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=3 ms, other=0 ms
+		Project Asset Count: scripts=9885, non-scripts=2657
+		Asset File Changes: new=1, changed=3, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeBeforeRefreshCallbacks: 0.001ms
+	ApplyChangesToAssetFolders: 0.844ms
+	Scan: 57.827ms
+	OnSourceAssetsModified: 9.289ms
+	GetAllGuidsForCategorization: 1.295ms
+	CategorizeAssets: 38.492ms
+	ImportOutOfDateAssets: 140.986ms (-3.272ms without children)
+		ImportManagerImport: 122.287ms (20.423ms without children)
+			ImportInProcess: 101.541ms
+			UpdateCategorizedAssets: 0.323ms
+		CompileScripts: 2.743ms
+		ReloadNativeAssets: 0.091ms
+		UnloadImportedAssets: 2.005ms
+		ReloadImportedAssets: 2.644ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 3.460ms
+		InitializingProgressBar: 0.217ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 10.810ms
+	PostProcessAllAssets: 1696.781ms
+	Hotreload: 51.885ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.463ms
+	UnloadStreamsBegin: 0.276ms
+	PersistCurrentRevisions: 1.687ms
+	UnloadStreamsEnd: 0.148ms
+	Untracked: 591.859ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 1.5361ms
+Starting: D:\Program Files\Unity 2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aEDbg.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/_svn_work/WeChatGame
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
