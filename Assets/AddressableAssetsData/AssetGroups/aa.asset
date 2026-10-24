@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4fc43bfdb1531c4fa839cb4e3380d13
+    m_Address: HumanRunning_AnimatedMesh
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f89be0d2a3715a54a83f1b13b3875175, type: 2}
   m_SchemaSet:

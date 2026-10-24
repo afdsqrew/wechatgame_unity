@@ -19,13 +19,17 @@ public partial class TextureInstanceRenderSystem : SystemBase
     {
         public TextureInstancedRenderer Renderer;
         public Texture2D InstanceTex;
-        public readonly List<float4x4> Matrices = new List<float4x4>();
+        // 持久化 NativeList：容量保留跨帧复用，避免每帧 List.ToArray + new NativeArray 的分配
+        public readonly NativeList<float4x4> Matrices = new NativeList<float4x4>(Allocator.Persistent);
     }
 
     private readonly Dictionary<(Mesh mesh, Material material), RenderGroup> _groups =
         new Dictionary<(Mesh, Material), RenderGroup>();
 
     private Shader _instancedShader;
+
+    // 缓存主相机：Camera.main 每次调用都走原生查找，仅在丢失（切换场景/销毁）时重新获取
+    private Camera _mainCamera;
 
     protected override void OnCreate()
     {
@@ -64,26 +68,30 @@ public partial class TextureInstanceRenderSystem : SystemBase
             group.Matrices.Add(localToWorld.ValueRO.Value);
         }
 
-        var camera = Camera.main;
+        // == null 同时覆盖"场景里没有主相机"和"缓存的相机已被销毁"两种情况
+        if (_mainCamera == null)
+            _mainCamera = Camera.main;
+        var camera = _mainCamera;
+
         foreach (var group in _groups.Values)
         {
-            if (group.Matrices.Count == 0)
+            if (group.Matrices.Length == 0)
                 continue;
 
             // 矩阵编码进纹理，Shader 端按 SV_InstanceID 逐实例取回，单次绘制出全部实例
-            using (var matrices = new NativeArray<float4x4>(group.Matrices.ToArray(), Allocator.TempJob))
-            {
-                group.InstanceTex = InstanceTextureEncoder.EncodeMatrices(matrices, group.InstanceTex);
-                group.Renderer.UpdateInstances(group.InstanceTex, group.Matrices.Count);
-                group.Renderer.Draw(camera);
-            }
+            group.InstanceTex = InstanceTextureEncoder.EncodeMatrices(group.Matrices.AsArray(), group.InstanceTex);
+            group.Renderer.UpdateInstances(group.InstanceTex, group.Matrices.Length);
+            group.Renderer.Draw(camera);
         }
     }
 
     protected override void OnDestroy()
     {
         foreach (var group in _groups.Values)
+        {
             group.Renderer.Dispose(); // Dispose 内会销毁持有的实例纹理
+            group.Matrices.Dispose();
+        }
         _groups.Clear();
     }
 

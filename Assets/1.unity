@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 1104425774}
   - component: {fileID: 1104425775}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DLCCharacterAuthoring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31144f0ad1e21d646b94994813be014a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterID: Cube
+  CharacterID: HumanRunning_AnimatedMesh
 --- !u!1 &1120824044
 GameObject:
   m_ObjectHideFlags: 0
