@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MeshAnimator/Examples/Example_Crowd/MAExample_Crowd.unity
+    guid: 7870ad477b926384f980c189bb0a7375
+  - enabled: 1
     path: Assets/1.unity
     guid: 59cb56459aac7e742b8b223174de8d52
   m_configObjects:
