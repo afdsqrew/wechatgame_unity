@@ -15,15 +15,13 @@ public class GameObjectConversionUtility
     /// - 这是运行时转换（配合 Addressables 动态加载的 Prefab），与 SubScene 烘焙是两条路。
     /// </summary>
     public static Entity ConvertGameObjectHierarchy(
-        GameObject prefab, object settings)
+        GameObject prefab, World settings)
     {
         if (prefab == null)
             throw new System.ArgumentNullException(
                 nameof(prefab));
 
-        var world = settings as World ??
-                    World.DefaultGameObjectInjectionWorld;
-        var em = world.EntityManager;
+        var em = settings.EntityManager;
 
         // 根实体 = 层级锚点：Prefab 标签 + 局部变换 + LinkedEntityGroup（整组克隆的依据）
         var root = em.CreateEntity(typeof(Prefab),

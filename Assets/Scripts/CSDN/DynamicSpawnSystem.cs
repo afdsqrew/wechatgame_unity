@@ -24,7 +24,6 @@ partial struct DynamicSpawnSystem : ISystem {
                 LocalTransform.FromPosition(renderComp.SpawnPosition));
             ecb.DestroyEntity(entity);
         }
-        
         ecb.Playback(state.EntityManager);
         ecb.Dispose();
     }
