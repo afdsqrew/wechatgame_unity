@@ -36,15 +36,18 @@ public class CharacterLoader : MonoBehaviour {
             return;
         }
         
-        var prefab = await AddressablesLoader.LoadPrefabAsync(id);
+        //@@@var prefab = await AddressablesLoader.LoadPrefabAsync(id);
         World curWorld =
             World.DefaultGameObjectInjectionWorld;
         
+        ///@@@
+        /*
         var convertedEntity = GameObjectConversionUtility.ConvertGameObjectHierarchy(
             prefab, curWorld);
         
         _characterCache[id] = convertedEntity;
         SpawnCharacter(convertedEntity,spawnCharsData);
+        */
     }
     
     void SpawnCharacter( Entity prefabEntity,SpawnCharsData spawnCharsData)

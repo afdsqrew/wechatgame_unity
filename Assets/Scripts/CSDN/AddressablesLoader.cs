@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+/*
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
@@ -18,3 +19,4 @@ public class AddressablesLoader : MonoBehaviour
             : null;
     }
 }
+*/

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
+
+/*
 using UnityEngine.AddressableAssets;
 
 public class EntityProxyAuthoring : MonoBehaviour {
@@ -28,3 +30,4 @@ public class EntityProxyAuthoring : MonoBehaviour {
         }
     }
 }
+*/

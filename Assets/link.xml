@@ -1,0 +1,8 @@
+<linker>
+    <!-- 3.x 主程序集 -->
+    <assembly fullname="YooAsset" preserve="all" />
+    <!-- 2.x 主程序集名是 YooAsset.Runtime；两个都写并用 ignoreIfMissing 防止版本不匹配时报错 -->
+    <assembly fullname="YooAsset.Runtime" preserve="all" ignoreIfMissing="1" />
+    <!-- 如果你用了 Mini Game 示例里的微信/抖音文件系统 -->
+    <assembly fullname="YooAsset.MiniGame" preserve="all" ignoreIfMissing="1" />
+</linker>
