@@ -1,11 +1,14 @@
 {
   "dependencies": {
     "cn.tuanjie.codely.bridge": "1.0.87",
+    "com.code-philosophy.hybridclr": "https://github.com/focus-creative-games/hybridclr_unity.git",
+    "com.tuyoogame.yooasset": "file:YooAsset-3.0.6/YooAsset-3.0.6/Assets/YooAsset",
     "com.unity.addressables": "1.22.3",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.entities": "1.4.8",
     "com.unity.entities.graphics": "1.4.8",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.physics": "1.4.7",
     "com.unity.platforms": "1.0.0-exp.6",
     "com.unity.render-pipelines.universal": "14.0.12",
     "com.unity.textmeshpro": "3.0.7",

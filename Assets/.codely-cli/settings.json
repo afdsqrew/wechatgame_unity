@@ -1,4 +1,8 @@
 {
   "autoEditMemory": true,
-  "model": "codely-core"
+  "mcpServers": {
+    "TJGenerators": {
+      "httpUrl": "https://ai-generator.tuanjie.cn/mcp"
+    }
+  }
 }
