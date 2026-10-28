@@ -21,6 +21,11 @@ public class GameManager
     private ResourcePackage _gamePackage;
     private MonoBehaviour _behaviour;
 
+    public EventGroup GetEventGroup()
+    {
+        return _eventGroup;
+    }
+
     /// <summary>
     /// Game package.
     /// </summary>
@@ -50,12 +55,6 @@ public class GameManager
         _behaviour = behaviour ?? throw new ArgumentNullException(nameof(behaviour));
     }
 
-    private GameManager()
-    {
-        // Register event listeners.
-        _eventGroup.AddListener<SceneChangeToHomeEvent>(OnHandleEventMessage);
-        _eventGroup.AddListener<SceneChangeToBattleEvent>(OnHandleEventMessage);
-    }
 
     /// <summary>
     /// Starts a coroutine.
@@ -70,18 +69,5 @@ public class GameManager
         _behaviour.StartCoroutine(enumerator);
     }
 
-    /// <summary>
-    /// Handles event messages.
-    /// </summary>
-    private void OnHandleEventMessage(IEventMessage message)
-    {
-        if (message is SceneChangeToHomeEvent)
-        {
-            GamePackage.LoadSceneAsync("scene_home");
-        }
-        else if (message is SceneChangeToBattleEvent)
-        {
-            GamePackage.LoadSceneAsync("scene_battle");
-        }
-    }
+
 }

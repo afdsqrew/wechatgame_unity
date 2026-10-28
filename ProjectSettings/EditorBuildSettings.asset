@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/YooAsset/3.0.6/Space Shooter/Boot.unity
+    path: Assets/AOT/Samples/YooAsset/3.0.6/Space Shooter/Boot.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4587522e5f17a064e901ba9b2a78f013, type: 2}
