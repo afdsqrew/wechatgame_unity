@@ -8,7 +8,6 @@ public class HotUpdateMain
     {
         Debug.Log("Hello World!");
         GameManaerHotUpdate.Instance.OnStartGame();
-        
         SceneChangeToHomeEvent.SendEventMessage();
     }
 }

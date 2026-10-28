@@ -25,11 +25,18 @@ public class EntityPlayer : MonoBehaviour
             _audioSource.Play();
             BattlePlayerFireBulletEvent.SendEventMessage(_shotSpawn.position, _shotSpawn.rotation);
         }
+        
     }
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        
+        if (Input.GetButton("Fire1") )
+        {
+            moveVertical += 0.1f;
+        }
+    
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         _rigidbody.velocity = movement * MoveSpeed;
