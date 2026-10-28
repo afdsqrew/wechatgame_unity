@@ -4,160 +4,180 @@
     "PackageVersion": "v1.0.0",
     "Entries": [
         {
-            "BundleGuid": "ebb2d0601790a4e8160e890360652bec",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_music_background_ebb2d0601790a4e8160e890360652bec.bundle"
+            "BundleGuid": "021c6c73d422a7ed48c9b148af146455",
+            "FileName": "021c6c73d422a7ed48c9b148af146455.bundle"
         },
         {
-            "BundleGuid": "54e167df40cbe49ed084e02d0ae8df22",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_sound_explosion_asteroid_54e167df40cbe49ed084e02d0ae8df22.bundle"
+            "BundleGuid": "057844928d76759afe9e65a488bba8e9",
+            "FileName": "057844928d76759afe9e65a488bba8e9.bundle"
         },
         {
-            "BundleGuid": "c785f53baf9c01536b6df2ce13fcc0e1",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_sound_explosion_enemy_c785f53baf9c01536b6df2ce13fcc0e1.bundle"
+            "BundleGuid": "0dbe5592aacb54ab116dac43012a1421",
+            "FileName": "0dbe5592aacb54ab116dac43012a1421.bundle"
         },
         {
-            "BundleGuid": "7222a8c58cc1827ab6bd798638423efc",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_sound_explosion_player_7222a8c58cc1827ab6bd798638423efc.bundle"
-        },
-        {
-            "BundleGuid": "165b6ab23eef439ed6533af40b48e0c3",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_sound_weapon_enemy_165b6ab23eef439ed6533af40b48e0c3.bundle"
-        },
-        {
-            "BundleGuid": "fe3b587e399d4bfee18b10e3d70e7d05",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_audio_sound_weapon_player_fe3b587e399d4bfee18b10e3d70e7d05.bundle"
-        },
-        {
-            "BundleGuid": "8960fe17fb77f951325a1b09bafcbdf2",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effectart_8960fe17fb77f951325a1b09bafcbdf2.bundle"
-        },
-        {
-            "BundleGuid": "5a3061e613e5503e5d99c276bd6b7132",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effect_engines_enemy_5a3061e613e5503e5d99c276bd6b7132.bundle"
+            "BundleGuid": "11696a93cc1ef4f8f483488d52cc20b5",
+            "FileName": "11696a93cc1ef4f8f483488d52cc20b5.bundle"
         },
         {
             "BundleGuid": "1293221cee1036bf284845930e993d1e",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effect_engines_player_1293221cee1036bf284845930e993d1e.bundle"
+            "FileName": "1293221cee1036bf284845930e993d1e.bundle"
         },
         {
-            "BundleGuid": "fd2d2dcb81a639c43f5e3f431d6c0b97",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effect_explosion_asteroid_fd2d2dcb81a639c43f5e3f431d6c0b97.bundle"
+            "BundleGuid": "13d84551408132cd616b3952b706a13e",
+            "FileName": "13d84551408132cd616b3952b706a13e.bundle"
         },
         {
-            "BundleGuid": "4e5cd5cf56494965837e2ecba09beaee",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effect_explosion_enemy_4e5cd5cf56494965837e2ecba09beaee.bundle"
-        },
-        {
-            "BundleGuid": "01c9128548091106ef8cc8bf3d364f2e",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_effect_explosion_player_01c9128548091106ef8cc8bf3d364f2e.bundle"
-        },
-        {
-            "BundleGuid": "cb2fc05703bc16f8def19848129999a5",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entityart_prop_asteroid_01_cb2fc05703bc16f8def19848129999a5.bundle"
-        },
-        {
-            "BundleGuid": "2163545a4652970f71d1e6a10bbab53b",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entityart_prop_asteroid_02_2163545a4652970f71d1e6a10bbab53b.bundle"
-        },
-        {
-            "BundleGuid": "ef4ba021decc78f1e1a7cba490a8dd3b",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entityart_prop_asteroid_03_ef4ba021decc78f1e1a7cba490a8dd3b.bundle"
-        },
-        {
-            "BundleGuid": "bfb257f9001fb361f042ac9fa034e679",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entityart_vehicle_enemyship_bfb257f9001fb361f042ac9fa034e679.bundle"
-        },
-        {
-            "BundleGuid": "4b792b510cb943f46cf7d4b2aba33ab9",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entityart_vehicle_playership_4b792b510cb943f46cf7d4b2aba33ab9.bundle"
-        },
-        {
-            "BundleGuid": "2879b52573a47c7379a4e1b5e9705729",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_asteroid01_2879b52573a47c7379a4e1b5e9705729.bundle"
-        },
-        {
-            "BundleGuid": "ab2f1f84e3382775a6fc1bcba35d251a",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_asteroid02_ab2f1f84e3382775a6fc1bcba35d251a.bundle"
-        },
-        {
-            "BundleGuid": "5f226a16f2cebeed6cebc9e8c808818b",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_asteroid03_5f226a16f2cebeed6cebc9e8c808818b.bundle"
-        },
-        {
-            "BundleGuid": "e947145faf69bef79eb7e89655271486",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_enemy_bullet_e947145faf69bef79eb7e89655271486.bundle"
-        },
-        {
-            "BundleGuid": "482109e5da9014abdb86f845cdbd1358",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_enemy_ship_482109e5da9014abdb86f845cdbd1358.bundle"
-        },
-        {
-            "BundleGuid": "b31d85e8b5e9933bb724318662275e90",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_player_bullet_b31d85e8b5e9933bb724318662275e90.bundle"
-        },
-        {
-            "BundleGuid": "bb2cb2212a2d71c9883206532ae0574e",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_entity_player_ship_bb2cb2212a2d71c9883206532ae0574e.bundle"
-        },
-        {
-            "BundleGuid": "66f8dc2a10eb63d75d903d8484a745cc",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_sceneart_66f8dc2a10eb63d75d903d8484a745cc.bundle"
-        },
-        {
-            "BundleGuid": "59d8c16a421b0f82b1111c8afb8c09cc",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_scene_scene_battle_59d8c16a421b0f82b1111c8afb8c09cc.bundle"
-        },
-        {
-            "BundleGuid": "72e51a7e0f70c356ae27fd9490a0f866",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_scene_scene_home_72e51a7e0f70c356ae27fd9490a0f866.bundle"
+            "BundleGuid": "165b6ab23eef439ed6533af40b48e0c3",
+            "FileName": "165b6ab23eef439ed6533af40b48e0c3.bundle"
         },
         {
             "BundleGuid": "2fe4e971986da594c7e8b5424391eeba",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uifont_2fe4e971986da594c7e8b5424391eeba.bundle"
+            "FileName": "2fe4e971986da594c7e8b5424391eeba.bundle"
         },
         {
-            "BundleGuid": "b3145c80dcf499d4b648fad027553485",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uipanelart_b3145c80dcf499d4b648fad027553485.bundle"
+            "BundleGuid": "33186a9d524c3356ef4810fd641c8af8",
+            "FileName": "33186a9d524c3356ef4810fd641c8af8.bundle"
         },
         {
-            "BundleGuid": "16823fbe630190d64911843af883f3c4",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uipanel_uibattle_16823fbe630190d64911843af883f3c4.bundle"
-        },
-        {
-            "BundleGuid": "7294d2d6c466081869970a97bd016b55",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uipanel_uihome_7294d2d6c466081869970a97bd016b55.bundle"
-        },
-        {
-            "BundleGuid": "f82094d291eb68561adb27f993400c0a",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uipanel_uiloading_f82094d291eb68561adb27f993400c0a.bundle"
-        },
-        {
-            "BundleGuid": "8bedeb770020cdc281e4d3fde0b6c46a",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uispriteatlas_atlas_frame_8bedeb770020cdc281e4d3fde0b6c46a.bundle"
-        },
-        {
-            "BundleGuid": "d70899a011061cf30e375d6b24c659b1",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uispriteatlas_atlas_icon_d70899a011061cf30e375d6b24c659b1.bundle"
-        },
-        {
-            "BundleGuid": "32ac2d39857314f9e76f0b4a1ba16257",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uisprite_atlas_frame_32ac2d39857314f9e76f0b4a1ba16257.bundle"
-        },
-        {
-            "BundleGuid": "89dcc7b1771f3a5fd555889bc9d5dac8",
-            "FileName": "assets_samples_yooasset_3_0_6_space_shooter_gameres_uisprite_atlas_icon_89dcc7b1771f3a5fd555889bc9d5dac8.bundle"
-        },
-        {
-            "BundleGuid": "c3583f16f95254cc5186089bb7f0282a",
-            "FileName": "share_assets_samples_yooasset_3_0_6_space_shooter_gameres_scene_c3583f16f95254cc5186089bb7f0282a.bundle"
+            "BundleGuid": "3d6081930159e31fcc5d9efb1254fafe",
+            "FileName": "3d6081930159e31fcc5d9efb1254fafe.bundle"
         },
         {
             "BundleGuid": "52499fdbc4503e83bae8a2527d981e31",
-            "FileName": "share_packages_com_unity_render-pipelines_universal_runtime_materials_52499fdbc4503e83bae8a2527d981e31.bundle"
+            "FileName": "52499fdbc4503e83bae8a2527d981e31.bundle"
         },
         {
-            "BundleGuid": "358157196028d5b079efc2c3f044d2e2",
-            "FileName": "unityshaders_358157196028d5b079efc2c3f044d2e2.bundle"
+            "BundleGuid": "52b995f94cf57a7219b023280712148d",
+            "FileName": "52b995f94cf57a7219b023280712148d.bundle"
+        },
+        {
+            "BundleGuid": "54b17466c6a65ea74781886b2ae3ab86",
+            "FileName": "54b17466c6a65ea74781886b2ae3ab86.bundle"
+        },
+        {
+            "BundleGuid": "54e167df40cbe49ed084e02d0ae8df22",
+            "FileName": "54e167df40cbe49ed084e02d0ae8df22.bundle"
+        },
+        {
+            "BundleGuid": "56f8d0853767dcb538416805e96df77a",
+            "FileName": "56f8d0853767dcb538416805e96df77a.bundle"
+        },
+        {
+            "BundleGuid": "5882bfff44888ffde5672d4288f1be71",
+            "FileName": "5882bfff44888ffde5672d4288f1be71.bundle"
+        },
+        {
+            "BundleGuid": "5a3061e613e5503e5d99c276bd6b7132",
+            "FileName": "5a3061e613e5503e5d99c276bd6b7132.bundle"
+        },
+        {
+            "BundleGuid": "7222a8c58cc1827ab6bd798638423efc",
+            "FileName": "7222a8c58cc1827ab6bd798638423efc.bundle"
+        },
+        {
+            "BundleGuid": "736dad5df58d0516011e0aef2ceb882c",
+            "FileName": "736dad5df58d0516011e0aef2ceb882c.bundle"
+        },
+        {
+            "BundleGuid": "7637674a1b50b998f74044d738de4c28",
+            "FileName": "7637674a1b50b998f74044d738de4c28.bundle"
+        },
+        {
+            "BundleGuid": "88a7b8d39a0e844121831bdd313fea0d",
+            "FileName": "88a7b8d39a0e844121831bdd313fea0d.bundle"
+        },
+        {
+            "BundleGuid": "8960fe17fb77f951325a1b09bafcbdf2",
+            "FileName": "8960fe17fb77f951325a1b09bafcbdf2.bundle"
+        },
+        {
+            "BundleGuid": "8bedeb770020cdc281e4d3fde0b6c46a",
+            "FileName": "8bedeb770020cdc281e4d3fde0b6c46a.bundle"
+        },
+        {
+            "BundleGuid": "935b1b8712d5092eb5b0c7f1444f4859",
+            "FileName": "935b1b8712d5092eb5b0c7f1444f4859.bundle"
+        },
+        {
+            "BundleGuid": "980106e39c77e81e5183fd5f25760dab",
+            "FileName": "980106e39c77e81e5183fd5f25760dab.bundle"
+        },
+        {
+            "BundleGuid": "9a75141b1a18b93e2520a7f14dc98c13",
+            "FileName": "9a75141b1a18b93e2520a7f14dc98c13.bundle"
+        },
+        {
+            "BundleGuid": "9bd9bcfda656f128ae7cc27afb01ee43",
+            "FileName": "9bd9bcfda656f128ae7cc27afb01ee43.bundle"
+        },
+        {
+            "BundleGuid": "aeebf972036e7304a3692fb65839ce49",
+            "FileName": "aeebf972036e7304a3692fb65839ce49.bundle"
+        },
+        {
+            "BundleGuid": "aff1e57554bfe1581225a679981102d3",
+            "FileName": "aff1e57554bfe1581225a679981102d3.bundle"
+        },
+        {
+            "BundleGuid": "b3145c80dcf499d4b648fad027553485",
+            "FileName": "b3145c80dcf499d4b648fad027553485.bundle"
+        },
+        {
+            "BundleGuid": "bf0618d9282d603bc9696d6f8ce5db0e",
+            "FileName": "bf0618d9282d603bc9696d6f8ce5db0e.bundle"
+        },
+        {
+            "BundleGuid": "c147db55fdda69f5662c0dd396ef236d",
+            "FileName": "c147db55fdda69f5662c0dd396ef236d.bundle"
+        },
+        {
+            "BundleGuid": "c3583f16f95254cc5186089bb7f0282a",
+            "FileName": "c3583f16f95254cc5186089bb7f0282a.bundle"
+        },
+        {
+            "BundleGuid": "c785f53baf9c01536b6df2ce13fcc0e1",
+            "FileName": "c785f53baf9c01536b6df2ce13fcc0e1.bundle"
+        },
+        {
+            "BundleGuid": "d63fced8ff0aaf5018b3fdce1323aaf3",
+            "FileName": "d63fced8ff0aaf5018b3fdce1323aaf3.bundle"
+        },
+        {
+            "BundleGuid": "d70899a011061cf30e375d6b24c659b1",
+            "FileName": "d70899a011061cf30e375d6b24c659b1.bundle"
+        },
+        {
+            "BundleGuid": "dc5f351a798ab1ea24673bbf2905aa5e",
+            "FileName": "dc5f351a798ab1ea24673bbf2905aa5e.bundle"
+        },
+        {
+            "BundleGuid": "ebb2d0601790a4e8160e890360652bec",
+            "FileName": "ebb2d0601790a4e8160e890360652bec.bundle"
+        },
+        {
+            "BundleGuid": "f1b56410e77ee017ff7729e5fcf3929d",
+            "FileName": "f1b56410e77ee017ff7729e5fcf3929d.bundle"
+        },
+        {
+            "BundleGuid": "f1d63d985477b841e349db3f63e7565e",
+            "FileName": "f1d63d985477b841e349db3f63e7565e.bundle"
+        },
+        {
+            "BundleGuid": "f25c18ac8d40a204f0b1cb84cd03e401",
+            "FileName": "f25c18ac8d40a204f0b1cb84cd03e401.bundle"
+        },
+        {
+            "BundleGuid": "f6946ce5cf2757e340bd5ce224239247",
+            "FileName": "f6946ce5cf2757e340bd5ce224239247.bundle"
+        },
+        {
+            "BundleGuid": "f79524a0247a1596b8c82ef6aa4ffe03",
+            "FileName": "f79524a0247a1596b8c82ef6aa4ffe03.bundle"
+        },
+        {
+            "BundleGuid": "fe3b587e399d4bfee18b10e3d70e7d05",
+            "FileName": "fe3b587e399d4bfee18b10e3d70e7d05.bundle"
         }
     ]
 }

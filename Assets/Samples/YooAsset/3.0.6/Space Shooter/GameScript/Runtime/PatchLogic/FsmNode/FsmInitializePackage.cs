@@ -112,7 +112,7 @@ internal class FsmInitializePackage : IStateNode
     {
         //string hostServerIP = "http://10.0.2.2"; // Android emulator address.
         string hostServerIP = "http://192.168.1.6/";
-        string appVersion = "v1.0";
+        string appVersion = "v1.0.0";
 
 #if UNITY_EDITOR
         if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
