@@ -91,16 +91,52 @@ internal class FsmInitializePackage : IStateNode
 #endif
         }
 
+        if (playMode == EPlayMode.CustomPlayMode_WX_Editor)
+        {
+            string defaultHostServer = GetHostServerURL();
+            string fallbackHostServer = GetHostServerURL();
+            Debug.Log($"@@@ CustomPlayMode_WX_Editor CustomPlayMode_WX_EditordefaultHostServer={defaultHostServer}   fallbackHostServer={fallbackHostServer}");
+            IRemoteService remoteServices = new RemoteService(defaultHostServer, fallbackHostServer);
+            var webServerFileSystemParams = FileSystemParameters.CreateDefaultWebServerFileSystemParameters_WX_Editor(defaultHostServer);
+            var webNetworkFileSystemParams = FileSystemParameters.CreateDefaultWebNetworkFileSystemParameters(remoteServices); //支持跨域下载
+    
+            var createParameters = new WX_Editor_PlayModeOptions();
+            createParameters.WebServerFileSystemParameters = webServerFileSystemParams;
+            createParameters.WebNetworkFileSystemParameters = webNetworkFileSystemParams;
+            initializationOperation = package.InitializePackageAsync(createParameters);
+        }
+        
+        if (playMode == EPlayMode.CustomPlayMode_WX_Runtime)
+        {
+            string defaultHostServer = GetHostServerURL();
+            string fallbackHostServer = GetHostServerURL();
+            IRemoteService remoteService = new RemoteService(defaultHostServer, fallbackHostServer);
+    
+            // 小游戏缓存根目录
+            // 注意：此处代码根据微信插件配置来填写！
+            string packageRoot = $"{WeChatWASM.WX.env.USER_DATA_PATH}/__GAME_FILE_CACHE/yoo";
+            //string packageRoot = $"{WeChatWASM.WX.PluginCachePath}/yoo";
+    
+            // 创建初始化参数
+            var createParameters = new WebPlayModeOptions();
+            createParameters.WebNetworkFileSystemParameters = WechatFileSystemCreater.CreateFileSystemParameters(packageRoot, remoteService, null);
+    
+            // 初始化ResourcePackage
+            yield return package.InitializePackageAsync(createParameters);
+        }
+
         yield return initializationOperation;
 
         // Show prompt when initialization fails.
         if (initializationOperation.Status != EOperationStatus.Succeeded)
         {
+            Debug.LogError($"@@@ 资源包初始化失败：{initializationOperation.Error}");
             Debug.LogWarning($"{initializationOperation.Error}");
             PatchInitializeFailedEvent.SendEventMessage();
         }
         else
         {
+            Debug.Log("@@@ 资源包初始化成功！");
             _machine.ChangeState<FsmRequestPackageVersion>();
         }
     }
@@ -110,11 +146,15 @@ internal class FsmInitializePackage : IStateNode
     /// </summary>
     private string GetHostServerURL()
     {
+        //@@@@
         //string hostServerIP = "http://10.0.2.2"; // Android emulator address.
-        string hostServerIP = "http://192.168.1.6/";
+        //string hostServerIP = "http://192.168.1.6/";
+        //string hostServerIP = "https://second-dp66dg33ca8y.edgeone.cool";
+        string hostServerIP = "https://pub-c23bd805be32414d86b1a214a8dcfdf4.r2.dev";
         string appVersion = "v1.0.0";
 
 #if UNITY_EDITOR
+        /*@@
         if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
             return $"{hostServerIP}/CDN/Android/{appVersion}";
         else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
@@ -123,15 +163,37 @@ internal class FsmInitializePackage : IStateNode
             return $"{hostServerIP}/CDN/WebGL/{appVersion}";
         else
             return $"{hostServerIP}/CDN/PC/{appVersion}";
+            */
+        //https://pub-c23bd805be32414d86b1a214a8dcfdf4.r2.dev/cdn/v1.0.0/yoo/DefaultPackage/05f73d9b3dde25ac5f1195952f9a9100.bundle.meta
+        if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
+            return $"{hostServerIP}/CDN/Android/{appVersion}";
+        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
+            return $"{hostServerIP}/CDN/IPhone/{appVersion}";
+        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
+            return $"{hostServerIP}/{appVersion}/yoo/DefaultPackage";
+        else
+            return $"{hostServerIP}/CDN/PC/{appVersion}";
 #else
         if (Application.platform == RuntimePlatform.Android)
             return $"{hostServerIP}/CDN/Android/{appVersion}";
         else if (Application.platform == RuntimePlatform.IPhonePlayer)
             return $"{hostServerIP}/CDN/IPhone/{appVersion}";
         else if (Application.platform == RuntimePlatform.WebGLPlayer)
-            return $"{hostServerIP}/CDN/WebGL/{appVersion}";
+{
+            //@@
+            Debug.Log("webgl 1");
+
+            //return $"{hostServerIP}/CDN/WebGL/{appVersion}";
+            return $"{hostServerIP}/{appVersion}/yoo/DefaultPackage";
+}
         else
-            return $"{hostServerIP}/CDN/PC/{appVersion}";
+{
+            Debug.Log("webgl 2");
+
+            //@@
+            //return $"{hostServerIP}/CDN/PC/{appVersion}";
+            return $"{hostServerIP}/{appVersion}/yoo/DefaultPackage";
+}
 #endif
     }
 

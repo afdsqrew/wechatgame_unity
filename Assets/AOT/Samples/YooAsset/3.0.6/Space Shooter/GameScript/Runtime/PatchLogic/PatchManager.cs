@@ -90,6 +90,9 @@ public static class PatchManager
             case EPlayMode.OfflinePlayMode:
             case EPlayMode.HostPlayMode:
             case EPlayMode.WebPlayMode:
+                
+            case EPlayMode.CustomPlayMode_WX_Editor:
+            case EPlayMode.CustomPlayMode_WX_Runtime:
                 return true;
             default:
                 return false;

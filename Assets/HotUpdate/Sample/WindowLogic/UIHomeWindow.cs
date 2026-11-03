@@ -28,6 +28,8 @@ public class UIHomeWindow : MonoBehaviour
 
     private void OnClickPlayGameBtn()
     {
+        Debug.Log("@ OnClickPlayGameBtn");
+        gameObject.SetActive(false);
         SceneChangeToBattleEvent.SendEventMessage();
     }
     private void OnClickAboutBtn()
