@@ -40,5 +40,9 @@ namespace YooAsset
         /// 免构建运行模式
         /// </summary>
         //DatalessPlayMode,
+        
+        CustomPlayMode_WX_Editor,
+        
+        CustomPlayMode_WX_Runtime,
     }
 }

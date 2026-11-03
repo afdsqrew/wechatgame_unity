@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -34,6 +35,7 @@ namespace YooAsset
         /// <param name="options">加载内置资源目录的操作选项</param>
         internal LoadBuiltinCatalogOperation(LoadBuiltinCatalogOptions options)
         {
+            Debug.Log("@@@ confirm options");
             _options = options;
         }
         protected override void InternalStart()
@@ -73,6 +75,7 @@ namespace YooAsset
                 if (_downloadBytesRequest == null)
                 {
                     string url = DownloadUrlHelper.ToLocalFileUrl(_options.FilePath);
+                    Debug.Log($"@@@ _options.FilePath={_options.FilePath} url={url}");
                     var args = new DownloadDataRequestArgs(
                         url: url,
                         timeout: 60,

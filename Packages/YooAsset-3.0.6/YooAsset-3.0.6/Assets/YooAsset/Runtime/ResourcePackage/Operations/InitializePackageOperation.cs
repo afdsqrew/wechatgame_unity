@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -42,6 +43,7 @@ namespace YooAsset
 
             if (_steps == ESteps.SetPlayMode)
             {
+                
                 if (_options is EditorSimulateModeOptions)
                     _playMode = EPlayMode.EditorSimulateMode;
                 else if (_options is OfflinePlayModeOptions)
@@ -52,9 +54,14 @@ namespace YooAsset
                     _playMode = EPlayMode.WebPlayMode;
                 else if (_options is CustomPlayModeOptions)
                     _playMode = EPlayMode.CustomPlayMode;
+                else if (_options is WX_Editor_PlayModeOptions)
+                    _playMode = EPlayMode.CustomPlayMode_WX_Editor;
                 else
                     throw new NotImplementedException($"Options type is not implemented: {_options.GetType().Name}.");
 
+                Debug.Log($"@@@ InternalUpdate() ESteps.SetPlayMode _playMode={_playMode}");
+
+                
                 _steps = ESteps.CheckOptions;
             }
 
@@ -108,13 +115,22 @@ namespace YooAsset
                         var initializeParameters = _options as WebPlayModeOptions;
                         _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.WebServerFileSystemParameters, initializeParameters.WebNetworkFileSystemParameters);
                     }
-                    else if (_playMode == EPlayMode.CustomPlayMode)
-                    {
-                        var initializeParameters = _options as CustomPlayModeOptions;
-                        _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.FileSystemParameterList);
-                    }
+                    
+                   else if (_playMode == EPlayMode.CustomPlayMode)
+                   {
+                       var initializeParameters = _options as CustomPlayModeOptions;
+                       _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.FileSystemParameterList);
+                   }
+                   else if (_playMode == EPlayMode.CustomPlayMode_WX_Editor)
+                   {
+                       Debug.Log("@@@ WX_Editor_PlayModeOptions _fileSystemHost.InitializeAsync");
+                       var initializeParameters = _options as WX_Editor_PlayModeOptions;
+                       _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.WebServerFileSystemParameters, initializeParameters.WebNetworkFileSystemParameters);
+                   }
+                   
                     else
                     {
+                        Debug.Log($"@@@ !!! Play mode is not implemented: {_playMode}.");
                         throw new NotImplementedException($"Play mode is not implemented: {_playMode}.");
                     }
 

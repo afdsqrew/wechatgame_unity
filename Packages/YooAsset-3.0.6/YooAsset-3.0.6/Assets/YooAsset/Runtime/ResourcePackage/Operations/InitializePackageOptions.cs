@@ -88,4 +88,18 @@ namespace YooAsset
         /// <remarks>列表中最后一个元素将作为主文件系统</remarks>
         public readonly List<FileSystemParameters> FileSystemParameterList = new List<FileSystemParameters>();
     }
+    
+    public class WX_Editor_PlayModeOptions : InitializePackageOptions
+    {
+        /// <summary>
+        /// Web 服务器文件系统初始化参数
+        /// </summary>
+        public FileSystemParameters WebServerFileSystemParameters { get; set; }
+
+        /// <summary>
+        /// Web 网络文件系统初始化参数
+        /// </summary>
+        public FileSystemParameters WebNetworkFileSystemParameters { get; set; }
+    }
+
 }

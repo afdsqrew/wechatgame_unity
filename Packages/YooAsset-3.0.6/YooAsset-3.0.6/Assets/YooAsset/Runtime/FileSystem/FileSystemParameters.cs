@@ -201,5 +201,14 @@ namespace YooAsset
             return fileSystemParams;
         }
         #endregion
+        
+        
+        public static FileSystemParameters CreateDefaultWebServerFileSystemParameters_WX_Editor(string packageRoot)
+        {
+            string fileSystemClass = typeof(WebServerFileSystem).FullName;
+            var fileSystemParams = new FileSystemParameters(fileSystemClass, packageRoot);
+            fileSystemParams.AddParameter(EFileSystemParameter.DisableUnityWebCache, false);
+            return fileSystemParams;
+        }
     }
 }

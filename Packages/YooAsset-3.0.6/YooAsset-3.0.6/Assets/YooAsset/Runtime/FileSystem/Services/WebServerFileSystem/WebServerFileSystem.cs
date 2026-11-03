@@ -205,6 +205,10 @@ namespace YooAsset
                 _packageRoot = GetDefaultWebPackageRoot(packageName);
             else
                 _packageRoot = packageRoot;
+            
+            Debug.Log($"@@@1 packageRoot={packageRoot} _packageRoot={_packageRoot}");
+            //@@@@
+            Debug.Log($"@@@2 _packageRoot={_packageRoot}");
 
             // 创建默认的下载后台接口
             if (DownloadBackend == null)

@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace YooAsset
 {
     /// <summary>
@@ -39,6 +41,7 @@ namespace YooAsset
             {
                 if (_loadBuiltinCatalogOp == null)
                 {
+                    Debug.Log("@@@  if (_loadBuiltinCatalogOp == null) LoadBuiltinCatalogOptions");
                     var options = new LoadBuiltinCatalogOptions(
                         packageName: _fileCache.PackageName,
                         filePath: _fileCache.GetCatalogBinaryFileLoadPath(),
