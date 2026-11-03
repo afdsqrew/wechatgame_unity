@@ -15,7 +15,7 @@ MonoBehaviour:
   ProjectConf:
     projectName: 
     Appid: wx1c8f01bbc73fa65c
-    CDN: http://192.168.1.6/Assets
+    CDN: https://pub-c23bd805be32414d86b1a214a8dcfdf4.r2.dev/v1.0.0
     assetLoadType: 1
     compressDataPackage: 0
     VideoUrl: 
@@ -23,8 +23,8 @@ MonoBehaviour:
     DST: D:/_svn_work/WeChatGame/Output
     StreamCDN: 
     bundleHashLength: 32
-    bundlePathIdentifier: StreamingAssets;
-    bundleExcludeExtensions: json;
+    bundlePathIdentifier: yoo;
+    bundleExcludeExtensions: json;version
     AssetsUrl: 
     MemorySize: 256
     HideAfterCallMain: 1
