@@ -1,4 +1,5 @@
 using UniFramework.Event;
+using UnityEngine;
 
 /// <summary>
 /// Change to home scene event.
@@ -18,6 +19,8 @@ public sealed class SceneChangeToBattleEvent : IEventMessage
 {
     public static void SendEventMessage()
     {
-        UniEvent.SendMessage(new SceneChangeToBattleEvent());
+        Debug.Log("@@@change2scenebatle 1");
+        UniEvent.SendMessage<SceneChangeToBattleEvent>(new SceneChangeToBattleEvent());
+        Debug.Log("@@@change2scenebatle 2");
     }
 }

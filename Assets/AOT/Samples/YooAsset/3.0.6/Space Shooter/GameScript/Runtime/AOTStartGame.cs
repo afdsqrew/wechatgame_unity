@@ -17,9 +17,7 @@ public class AOTStartGame
         //@@@@鍔犺浇dll
         //SceneChangeToHomeEvent.SendEventMessage();
         
-    
-
-        Boot boot = GameObject.Find("Boot").GetComponent<Boot>();
+        Boot boot =GameManager.Instance.GetBoot();
         
         if (Application.isEditor && boot.PlayMode == EPlayMode.EditorSimulateMode)
         {
@@ -40,8 +38,12 @@ public class AOTStartGame
             var assetHandle =
                 GameManager.Instance.GamePackage
                     .LoadAssetAsync<TextAsset>(asssetName);
+
+            Debug.Log("@@@AOTStartGame load assetName---noeditor mode");
             assetHandle.Completed += (AssetHandle handle) =>
             { 
+                Debug.Log("@@@AOTStartGame load Complete---noeditor mode");
+                
                 System.Reflection.Assembly hotUpdateAss= Assembly.Load(handle.GetAssetObject<TextAsset>().bytes);
                 Type helloType = hotUpdateAss.GetType("HotUpdateMain");
                 MethodInfo helloMethod = helloType.GetMethod("Run");

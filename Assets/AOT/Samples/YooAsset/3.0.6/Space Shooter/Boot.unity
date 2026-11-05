@@ -215,8 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fef9a778e4e254b939e9dc3e553bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayMode: 4
+  PlayMode: 9
   PatchWindowPrefab: {fileID: 4607067771552420938, guid: cd3c0e69e672e0f4cb953ab81d5644e9, type: 3}
+  UseLocalUrlCDN: 1
 --- !u!4 &1281760861
 Transform:
   m_ObjectHideFlags: 0

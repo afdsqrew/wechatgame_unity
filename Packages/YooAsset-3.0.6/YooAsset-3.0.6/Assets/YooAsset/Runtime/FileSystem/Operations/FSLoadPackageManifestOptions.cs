@@ -16,10 +16,20 @@ namespace YooAsset
         /// </summary>
         public int Timeout { get; }
 
+        public bool RequestVersionFlag { get; }
+        
         public FSLoadPackageManifestOptions(string packageVersion, int timeout)
         {
             PackageVersion = packageVersion;
             Timeout = timeout;
+            RequestVersionFlag = true;
+        }
+        
+        public FSLoadPackageManifestOptions(string packageVersion, int timeout ,bool requestVersionFlag)
+        {
+            PackageVersion = packageVersion;
+            Timeout = timeout;
+            RequestVersionFlag = requestVersionFlag;
         }
     }
 }

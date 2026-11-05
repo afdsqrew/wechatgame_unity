@@ -8,21 +8,22 @@ public class Boot : MonoBehaviour
     /// Resource system play mode.
     /// </summary>
     public EPlayMode PlayMode = EPlayMode.EditorSimulateMode;
-
-    //@@@
     public PatchWindow PatchWindowPrefab;
+    public bool UseLocalUrlCDN = false;
+    public DownloadUrlWrapper downloadUrlWrapper = new DownloadUrlWrapper();
     void Awake()
     {
         Debug.Log($"Resource system play mode: {PlayMode}.");
         Application.targetFrameRate = 60;
         Application.runInBackground = true;
+        downloadUrlWrapper.SetUseLocalCDNFlag(UseLocalUrlCDN);
         DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {
         // Game manager.
         GameManager.Instance.SetBehaviour(this);
-
+        GameManager.Instance.SetBoot(this);
         // Initialize event system.
         UniEvent.Initalize();
 

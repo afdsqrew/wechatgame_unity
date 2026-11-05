@@ -1,4 +1,5 @@
 using System.IO;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -23,19 +24,32 @@ namespace YooAsset
         private string _savePath;
         private string _tempPath;
         private ESteps _steps = ESteps.None;
-
-
+        private bool _requestVersionFlag ;
+        
         internal DownloadPackageHashOperation(SandboxFileSystem fileSystem, string packageVersion, int timeout)
         {
             _fileSystem = fileSystem;
             _packageVersion = packageVersion;
             _timeout = timeout;
+            _requestVersionFlag = true;
         }
+        
+        internal DownloadPackageHashOperation(SandboxFileSystem fileSystem, string packageVersion, int timeout,bool requestVersionFlag)
+        {
+            _fileSystem = fileSystem;
+            _packageVersion = packageVersion;
+            _timeout = timeout;
+            _requestVersionFlag = requestVersionFlag;
+        }
+        
         protected override void InternalStart()
         {
+            Debug.Log($"@1 hash operation _packageVersion={_packageVersion} _savePath={_savePath}");
             _savePath = _fileSystem.GetCachePackageHashFilePath(_packageVersion);
             _tempPath = _savePath + ".tmp";
             _steps = ESteps.CheckExists;
+            Debug.Log($"@2 hash operation _packageVersion={_packageVersion} _savePath={_savePath}");
+
         }
         protected override void InternalUpdate()
         {
@@ -44,14 +58,41 @@ namespace YooAsset
 
             if (_steps == ESteps.CheckExists)
             {
-                if (File.Exists(_savePath))
+                //这里魔改
+                if (_fileSystem.BootPlayMode == EPlayMode
+                        .CustomPlayMode_HostPlayMode)
                 {
-                    _steps = ESteps.Done;
-                    SetResult();
+                    Debug.Log($"-----这里魔改----_savePath={_savePath} _requestVersionFlag={_requestVersionFlag}");
+                    if (_requestVersionFlag == false)
+                    {
+                        if (File.Exists(_savePath))
+                        {
+                            _steps = ESteps.Done;
+                            SetResult();
+                            Debug.Log($"-----这里魔改----1 done");
+                        }
+                        else
+                        {
+                            _steps = ESteps.DownloadFile;
+                            Debug.Log($"-----这里魔改----2 done");
+                        }
+                    }
+                    else
+                    {
+                        _steps = ESteps.DownloadFile;
+                    }
                 }
                 else
                 {
-                    _steps = ESteps.DownloadFile;
+                    if (File.Exists(_savePath))
+                    {
+                        _steps = ESteps.Done;
+                        SetResult();
+                    }
+                    else
+                    {
+                        _steps = ESteps.DownloadFile;
+                    }
                 }
             }
 

@@ -41,7 +41,7 @@ namespace YooAsset
             {
                 if (_loadBuiltinCatalogOp == null)
                 {
-                    Debug.Log("@@@  if (_loadBuiltinCatalogOp == null) LoadBuiltinCatalogOptions");
+                    Debug.Log($"@@@ 拿catelog  _fileCache.GetCatalogBinaryFileLoadPath()={_fileCache.GetCatalogBinaryFileLoadPath()}");
                     var options = new LoadBuiltinCatalogOptions(
                         packageName: _fileCache.PackageName,
                         filePath: _fileCache.GetCatalogBinaryFileLoadPath(),

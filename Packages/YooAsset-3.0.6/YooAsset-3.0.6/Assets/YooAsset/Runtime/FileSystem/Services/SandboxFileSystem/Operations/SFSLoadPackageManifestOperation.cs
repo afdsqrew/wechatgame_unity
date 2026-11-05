@@ -1,4 +1,5 @@
 using System.IO;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -25,7 +26,7 @@ namespace YooAsset
         private LoadCachePackageHashOperation _loadCachePackageHashOp;
         private LoadCachePackageManifestOperation _loadCachePackageManifestOp;
         private ESteps _steps = ESteps.None;
-
+        private bool _requestVersionFlag = true;
 
         internal SFSLoadPackageManifestOperation(SandboxFileSystem fileSystem, string packageVersion, int timeout)
         {
@@ -33,8 +34,19 @@ namespace YooAsset
             _packageVersion = packageVersion;
             _timeout = timeout;
         }
+        
+        internal SFSLoadPackageManifestOperation(SandboxFileSystem fileSystem, string packageVersion, int timeout,bool requestVersionFlag)
+        {
+            _fileSystem = fileSystem;
+            _packageVersion = packageVersion;
+            _timeout = timeout;
+            _requestVersionFlag = requestVersionFlag;
+        }
+
+        
         protected override void InternalStart()
         {
+            Debug.Log("这里下载版本1");
             _steps = ESteps.DownloadPackageHash;
         }
         protected override void InternalUpdate()
@@ -46,7 +58,8 @@ namespace YooAsset
             {
                 if (_downloadPackageHashOp == null)
                 {
-                    _downloadPackageHashOp = new DownloadPackageHashOperation(_fileSystem, _packageVersion, _timeout);
+                    Debug.Log("这里下载版本2");
+                    _downloadPackageHashOp = new DownloadPackageHashOperation(_fileSystem, _packageVersion, _timeout,_requestVersionFlag);
                     _downloadPackageHashOp.StartOperation();
                     AddChildOperation(_downloadPackageHashOp);
                 }

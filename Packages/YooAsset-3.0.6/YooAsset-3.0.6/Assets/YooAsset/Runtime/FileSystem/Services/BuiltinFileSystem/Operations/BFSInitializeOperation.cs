@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace YooAsset
 {
     /// <summary>
@@ -40,8 +42,17 @@ namespace YooAsset
             if (_steps == ESteps.CheckPlatform)
             {
 #if UNITY_WEBGL
-                _steps = ESteps.Done;
-                SetError($"{nameof(BuiltinFileSystem)} does not support the WebGL platform.");
+                if (_fileSystem.BootPlayMode == EPlayMode
+                        .CustomPlayMode_HostPlayMode)
+                {
+                    Debug.Log("自定义脚本跳过webgl限制");
+                    _steps = ESteps.CheckAppFootprint;
+                }
+                else
+                {
+                    _steps = ESteps.Done;
+                    SetError($"@1 {nameof(BuiltinFileSystem)} does not support the WebGL platform.");
+                }
 #else
                 _steps = ESteps.CheckAppFootprint;
 #endif

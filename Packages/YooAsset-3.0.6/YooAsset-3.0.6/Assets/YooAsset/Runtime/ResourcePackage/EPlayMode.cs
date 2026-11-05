@@ -44,5 +44,10 @@ namespace YooAsset
         CustomPlayMode_WX_Editor,
         
         CustomPlayMode_WX_Runtime,
+        
+        CustomPlayMode_OfflinePlayMode,
+        
+        CustomPlayMode_HostPlayMode,
+        CustomPlayMode_HostPlayMode_WeekNet
     }
 }

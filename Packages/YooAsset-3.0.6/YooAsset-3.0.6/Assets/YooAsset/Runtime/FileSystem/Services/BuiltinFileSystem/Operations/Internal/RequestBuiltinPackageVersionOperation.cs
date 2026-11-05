@@ -1,4 +1,5 @@
 using System.IO;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -42,6 +43,7 @@ namespace YooAsset
             if (_steps == ESteps.TryLoadPackageVersion)
             {
                 string filePath = _fileSystem.GetBuiltinPackageVersionFilePath();
+                Debug.Log("@@@111 RequestBuiltinPackageVersionOperation:"+filePath);
                 if (File.Exists(filePath))
                 {
                     try
@@ -67,6 +69,8 @@ namespace YooAsset
                 {
                     string filePath = _fileSystem.GetBuiltinPackageVersionFilePath();
                     string url = DownloadUrlHelper.ToLocalFileUrl(filePath);
+                    
+                    Debug.Log($"@@@222 RequestBuiltinPackageVersionOperation: filePath={filePath} url={url}");
                     var args = new DownloadDataRequestArgs(
                         url: url,
                         timeout: 60,

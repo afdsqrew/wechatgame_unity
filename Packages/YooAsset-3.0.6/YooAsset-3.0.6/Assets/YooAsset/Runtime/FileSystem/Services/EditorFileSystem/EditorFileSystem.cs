@@ -232,6 +232,7 @@ namespace YooAsset
                 asyncSimulateMinFrame: AsyncSimulateMinFrame,
                 asyncSimulateMaxFrame: AsyncSimulateMaxFrame);
             string cacheRoot = GetEditorBundleCacheRoot();
+            Debug.Log($"@@@ editor system cache root cacheRoot={cacheRoot}");
             BundleCache = new EditorBundleCache(packageName, cacheRoot, cacheConfig);
         }
         /// <inheritdoc />

@@ -16,6 +16,7 @@ namespace YooAsset
         /// </summary>
         public int Timeout { get; }
 
+        public bool RequestPackageVersionFlag { get; }
         /// <summary>
         /// 创建加载清单选项实例
         /// </summary>
@@ -25,6 +26,7 @@ namespace YooAsset
         {
             PackageVersion = packageVersion;
             Timeout = timeout;
+            RequestPackageVersionFlag = true;
         }
 
         /// <summary>
@@ -33,6 +35,23 @@ namespace YooAsset
         internal FSLoadPackageManifestOptions ConvertTo()
         {
             return new FSLoadPackageManifestOptions(PackageVersion, Timeout);
+        }
+        internal FSLoadPackageManifestOptions ConvertToMethod2()
+        {
+            return new FSLoadPackageManifestOptions(PackageVersion, Timeout,RequestPackageVersionFlag);
+        }
+        
+        /// <summary>
+        /// 断网状态下直接进游戏
+        /// </summary>
+        /// <param name="packageVersion"></param>
+        /// <param name="timeout"></param>
+        public LoadPackageManifestOptions(string packageVersion, int timeout,bool requestPackageVersionFlag)
+        {
+            PackageVersion = packageVersion;
+            Timeout = timeout;
+            RequestPackageVersionFlag =
+                requestPackageVersionFlag;
         }
     }
 }

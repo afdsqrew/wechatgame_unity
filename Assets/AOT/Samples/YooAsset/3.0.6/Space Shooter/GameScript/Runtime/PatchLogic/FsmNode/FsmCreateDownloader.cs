@@ -34,6 +34,7 @@ internal class FsmCreateDownloader : IStateNode
 
         if (downloader.TotalDownloadCount == 0)
         {
+            PatchManager.SaveVersion();
             Debug.Log("No download files were found.");
             _machine.ChangeState<FsmStartGame>();
         }

@@ -20,6 +20,12 @@ public class GameManager
     private readonly EventGroup _eventGroup = new EventGroup();
     private ResourcePackage _gamePackage;
     private MonoBehaviour _behaviour;
+    private Boot _boot;
+
+    public Boot GetBoot()
+    {
+        return _boot;
+    }
 
     public EventGroup GetEventGroup()
     {
@@ -53,6 +59,11 @@ public class GameManager
     public void SetBehaviour(MonoBehaviour behaviour)
     {
         _behaviour = behaviour ?? throw new ArgumentNullException(nameof(behaviour));
+    }
+    
+    public void SetBoot(Boot boot)
+    {
+        _boot = boot ?? throw new ArgumentNullException(nameof(boot));
     }
 
 

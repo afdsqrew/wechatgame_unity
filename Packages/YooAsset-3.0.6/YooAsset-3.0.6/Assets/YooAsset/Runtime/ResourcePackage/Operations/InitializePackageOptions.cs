@@ -101,5 +101,18 @@ namespace YooAsset
         /// </summary>
         public FileSystemParameters WebNetworkFileSystemParameters { get; set; }
     }
+    
+    
+    public class Custom_HostPlay_PlayModeOptions : InitializePackageOptions
+    {
+        /// <summary>
+        /// 内置文件系统初始化参数
+        /// </summary>
+        public FileSystemParameters Custom_HostPlay_SystemParameters { get; set; }
 
+        /// <summary>
+        /// 缓存文件系统初始化参数
+        /// </summary>
+        public FileSystemParameters Custom_HostPlay_CacheFileSystemParameters { get; set; }
+    }
 }

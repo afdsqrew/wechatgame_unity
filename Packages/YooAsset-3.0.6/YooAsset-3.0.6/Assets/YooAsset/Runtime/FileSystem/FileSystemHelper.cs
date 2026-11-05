@@ -18,7 +18,7 @@ namespace YooAsset
             if (value == null)
                 throw new ArgumentNullException(paramName);
             throw new ArgumentException(
-                $"Failed to cast parameter, type '{value.GetType().Name}' does not match target type '{typeof(T).Name}'.",
+                $"@2 Failed to cast parameter, type '{value.GetType().Name}' does not match target type '{typeof(T).Name}'.",
                 paramName);
         }
     }

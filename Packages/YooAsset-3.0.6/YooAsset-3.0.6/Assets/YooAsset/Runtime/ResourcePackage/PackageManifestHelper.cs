@@ -25,9 +25,16 @@ namespace YooAsset
         public static bool VerifyManifestData(byte[] fileData, string hashValue)
         {
             if (fileData == null || fileData.Length == 0)
+            {
+                Debug.Log("v1 false");
                 return false;
+            }
+
             if (string.IsNullOrEmpty(hashValue))
+            {
+                Debug.Log("v2 false");
                 return false;
+            }
 
             // 注意:兼容两种验证方式
             string fileHash;
@@ -36,7 +43,9 @@ namespace YooAsset
             else
                 fileHash = HashUtility.ComputeCrc32(fileData);
 
-            return fileHash == hashValue;
+            bool ret = fileHash == hashValue;
+            Debug.Log($"v3 ret={ret}");
+            return ret;
         }
 
         /// <summary>

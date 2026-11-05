@@ -29,13 +29,21 @@ public class GameManaerHotUpdate
     /// </summary>
     private void OnHandleEventMessage(IEventMessage message)
     {
-        if (message is SceneChangeToHomeEvent)
+        System.Type t = message.GetType();
+        Debug.Log($"--- OnHandleEventMessage ={t.ToString()}");
+        if (t.ToString() == typeof(SceneChangeToHomeEvent).ToString() )
         {
             GameManager.Instance.GamePackage.LoadSceneAsync("scene_home");
         }
-        else if (message is SceneChangeToBattleEvent)
+        else if (t.ToString() == typeof(SceneChangeToBattleEvent).ToString())
         {
+            Debug.Log("--- OnHandleEventMessage SceneChangeToBattleEvent 1");
             GameManager.Instance.GamePackage.LoadSceneAsync("scene_battle");
+            Debug.Log("--- OnHandleEventMessage SceneChangeToBattleEvent 2");
+        }
+        else
+        {
+            Debug.Log("--- OnHandleEventMessage else 2");
         }
     }
 

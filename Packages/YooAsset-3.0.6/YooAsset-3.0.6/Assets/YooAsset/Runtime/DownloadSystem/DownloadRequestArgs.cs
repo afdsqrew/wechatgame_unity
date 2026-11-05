@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -112,6 +113,8 @@ namespace YooAsset
             long resumeOffset,
             IReadOnlyDictionary<string, string> headers = null)
         {
+            Debug.Log($"@@@@ 2 check savePath={savePath}");
+            
             RequestArgs = new DownloadRequestArgs(
                 url: url,
                 timeout: timeout,
@@ -138,6 +141,8 @@ namespace YooAsset
             string savePath,
             IReadOnlyDictionary<string, string> headers = null)
         {
+            Debug.Log($"@@@@ 1 check savePath={savePath}");
+
             RequestArgs = new DownloadRequestArgs(
                 url: url,
                 timeout: timeout,

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -58,6 +59,7 @@ namespace YooAsset
         }
         public YooPackageInvalidException(string packageName, string message) : base(message)
         {
+            Debug.Log($"@2 YooPackageInvalidException message={message}");
             PackageName = packageName;
         }
         public YooPackageInvalidException(string packageName, string message, Exception inner) : base(message, inner)

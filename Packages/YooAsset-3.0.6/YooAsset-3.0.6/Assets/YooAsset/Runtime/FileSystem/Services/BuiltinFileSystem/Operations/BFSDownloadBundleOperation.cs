@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace YooAsset
 {
     /// <summary>
@@ -55,6 +57,7 @@ namespace YooAsset
                 if (_downloadFileOp == null)
                 {
                     string builtinFilePath = _fileSystem.GetBuiltinBundleFilePath(Bundle);
+                    Debug.Log("@@@ unpack builtinFilePath:"+builtinFilePath);
                     _downloadFileOp = new UnpackAndCacheFileOperation(_fileSystem, Bundle, builtinFilePath);
                     _fileSystem.UnpackScheduler.RegisterDownloadOperation(_downloadFileOp);
                 }

@@ -81,6 +81,9 @@ internal class FsmInitializePackage : IStateNode
             string defaultHostServer = GetHostServerURL();
             string fallbackHostServer = GetHostServerURL();
             string packageRoot = $"{WeChatWASM.WX.env.USER_DATA_PATH}/__GAME_FILE_CACHE"; // Change this path if subdirectories are required.
+                        
+            Debug.Log("@@@minigame "+$"{WeChatWASM.WX.env.USER_DATA_PATH}/__GAME_FILE_CACHE");
+
             IRemoteService remoteService = new RemoteService(defaultHostServer, fallbackHostServer);
             createParameters.WebNetworkFileSystemParameters = WechatFileSystemCreater.CreateFileSystemParameters(packageRoot, remoteService);
             initializationOperation = package.InitializePackageAsync(createParameters);
@@ -124,7 +127,51 @@ internal class FsmInitializePackage : IStateNode
             // 初始化ResourcePackage
             yield return package.InitializePackageAsync(createParameters);
         }
+        
+        if (playMode == EPlayMode.CustomPlayMode_OfflinePlayMode)
+        {
+            var createParameters = new OfflinePlayModeOptions();
+            createParameters.BuiltinFileSystemParameters = FileSystemParameters.CreateDefaultBuiltinFileSystemParameters();
+            initializationOperation = package.InitializePackageAsync(createParameters);
+        }
+        
+        if (playMode == EPlayMode.CustomPlayMode_HostPlayMode)
+        {
+            string defaultHostServer = GetHostServerURL();
+            string fallbackHostServer = GetHostServerURL();
+            IRemoteService remoteService = new RemoteService(defaultHostServer, fallbackHostServer);
+            
+            var createParameters = new HostPlayModeOptions();
+            //createParameters.BuiltinFileSystemParameters = FileSystemParameters.CreateDefaultBuiltinFileSystemParameters();
+            createParameters.BuiltinFileSystemParameters =
+                null;
+            //createParameters.Custom_HostPlay_SystemParameters.AddParameter(EFileSystemParameter.CopyBuiltinPackageManifest, true);
+            //createParameters.BuiltinFileSystemParameters.AddParameter(EFileSystemParameter.PlayMode, playMode);
 
+            createParameters.CacheFileSystemParameters  = FileSystemParameters.CreateDefaultSandboxFileSystemParameters(remoteService);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadMaxConcurrency, 5);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadMaxRequestPerFrame, 1);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadWatchdogTimeout, 10);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.PlayMode, playMode);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.InstallCleanupMode, EInstallCleanupMode.None);
+
+            /*
+            var createParameters = new Custom_HostPlay_PlayModeOptions();
+            createParameters.Custom_HostPlay_SystemParameters = FileSystemParameters.CreateDefaultBuiltinFileSystemParameters();
+            //createParameters.Custom_HostPlay_SystemParameters.AddParameter(EFileSystemParameter.CopyBuiltinPackageManifest, true);
+            createParameters.Custom_HostPlay_SystemParameters.AddParameter(EFileSystemParameter.PlayMode, playMode);
+
+            createParameters.Custom_HostPlay_CacheFileSystemParameters = FileSystemParameters.CreateDefaultSandboxFileSystemParameters(remoteService);
+            createParameters.Custom_HostPlay_CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadMaxConcurrency, 5);
+            createParameters.Custom_HostPlay_CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadMaxRequestPerFrame, 1);
+            createParameters.Custom_HostPlay_CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadWatchdogTimeout, 10);
+            createParameters.Custom_HostPlay_CacheFileSystemParameters.AddParameter(EFileSystemParameter.PlayMode, playMode);
+            createParameters.Custom_HostPlay_CacheFileSystemParameters.AddParameter(EFileSystemParameter.InstallCleanupMode, EInstallCleanupMode.None);
+            */
+            initializationOperation = package.InitializePackageAsync(createParameters);
+        }
+        
+        
         yield return initializationOperation;
 
         // Show prompt when initialization fails.
@@ -154,25 +201,8 @@ internal class FsmInitializePackage : IStateNode
         string appVersion = "v1.0.0";
 
 #if UNITY_EDITOR
-        /*@@
-        if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
-            return $"{hostServerIP}/CDN/Android/{appVersion}";
-        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
-            return $"{hostServerIP}/CDN/IPhone/{appVersion}";
-        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
-            return $"{hostServerIP}/CDN/WebGL/{appVersion}";
-        else
-            return $"{hostServerIP}/CDN/PC/{appVersion}";
-            */
-        //https://pub-c23bd805be32414d86b1a214a8dcfdf4.r2.dev/cdn/v1.0.0/yoo/DefaultPackage/05f73d9b3dde25ac5f1195952f9a9100.bundle.meta
-        if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
-            return $"{hostServerIP}/CDN/Android/{appVersion}";
-        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
-            return $"{hostServerIP}/CDN/IPhone/{appVersion}";
-        else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
-            return $"{hostServerIP}/{appVersion}/yoo/DefaultPackage";
-        else
-            return $"{hostServerIP}/CDN/PC/{appVersion}";
+        return GameManager.Instance.GetBoot()
+            .downloadUrlWrapper.GetDownloadUrl();
 #else
         if (Application.platform == RuntimePlatform.Android)
             return $"{hostServerIP}/CDN/Android/{appVersion}";

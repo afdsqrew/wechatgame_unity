@@ -65,6 +65,8 @@ namespace YooAsset
                     {
                         // 下载远端文件
                         string url = GetRequestUrl(Bundle.GetFileName());
+                        Debug.Log($"@@@ 下载远端文件 url={url}");
+
                         _downloadFileOp = new DownloadAndCacheFileOperation(_fileSystem, Bundle, url);
                         _fileSystem.DownloadScheduler.RegisterDownloadOperation(_downloadFileOp);
                     }

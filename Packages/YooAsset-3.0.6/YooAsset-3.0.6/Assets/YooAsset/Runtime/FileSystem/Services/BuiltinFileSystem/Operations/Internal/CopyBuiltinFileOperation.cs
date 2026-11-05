@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -107,6 +108,7 @@ namespace YooAsset
                 {
                     // TODO: 团结引擎，在某些安卓机型（红米），通过UnityWebRequest拷贝包内文件会小概率失败。
                     string url = DownloadUrlHelper.ToLocalFileUrl(_sourceFilePath);
+                    Debug.Log($"@@@ check save path:_destFilePath={_destFilePath}");
                     var args = new DownloadFileRequestArgs(
                         url: url,
                         timeout: 60,

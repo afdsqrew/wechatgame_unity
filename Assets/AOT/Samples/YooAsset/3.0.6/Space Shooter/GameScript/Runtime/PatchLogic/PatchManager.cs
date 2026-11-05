@@ -32,6 +32,8 @@ public static class PatchManager
         _machine.AddNode<FsmDownloadPackageOver>();
         _machine.AddNode<FsmClearCacheBundle>();
         _machine.AddNode<FsmStartGame>();
+        
+        _machine.AddNode<FSMLoadLocalPackage>();
 
         _machine.SetBlackboardValue("PackageName", packageName);
         _machine.SetBlackboardValue("PlayMode", playMode);
@@ -93,9 +95,20 @@ public static class PatchManager
                 
             case EPlayMode.CustomPlayMode_WX_Editor:
             case EPlayMode.CustomPlayMode_WX_Runtime:
+                
+            case EPlayMode.CustomPlayMode_OfflinePlayMode:
+            case EPlayMode.CustomPlayMode_HostPlayMode:
                 return true;
             default:
                 return false;
         }
+    }
+
+    public static void SaveVersion()
+    {
+        string packageVersion = (string)_machine.GetBlackboardValue("PackageVersion");
+        PlayerPrefs.SetString("GAME_VERSION", packageVersion);
+        PlayerPrefs.Save();
+        UnityEngine.Debug.Log($"@@ packageVersion={packageVersion}");
     }
 }

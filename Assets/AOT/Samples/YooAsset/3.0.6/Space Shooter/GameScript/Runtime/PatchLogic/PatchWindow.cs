@@ -85,6 +85,7 @@ public class PatchWindow : MonoBehaviour
     /// </summary>
     private void OnHandleEventMessage(IEventMessage message)
     {
+        Debug.Log($"---OnHandleEventMessage---message={message.ToString()}");
         if (message is PatchInitializeFailedEvent)
         {
             System.Action callback = () =>

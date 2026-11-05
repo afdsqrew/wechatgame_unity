@@ -38,8 +38,16 @@ namespace YooAsset
             if (_steps == ESteps.CheckPlatform)
             {
 #if UNITY_WEBGL
-                _steps = ESteps.Done;
-                SetError($"{nameof(SandboxFileSystem)} does not support the WebGL platform.");
+                if (_fileSystem.BootPlayMode == EPlayMode
+                        .CustomPlayMode_HostPlayMode)
+                {
+                    _steps = ESteps.CheckParameter;
+                }
+                else
+                {
+                    _steps = ESteps.Done;
+                    SetError($"@2 {nameof(SandboxFileSystem)} does not support the WebGL platform.");
+                }
 #else
                 _steps = ESteps.CheckParameter;
 #endif

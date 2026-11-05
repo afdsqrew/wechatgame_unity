@@ -1020,7 +1020,7 @@ namespace YooAsset
             if (checkActiveManifest)
             {
                 if (_fileSystemHost.ActiveManifest == null)
-                    throw new YooPackageInvalidException(PackageName, "Active package manifest not found.");
+                    throw new YooPackageInvalidException(PackageName, "@ 1 Active package manifest not found.");
             }
         }
 

@@ -355,7 +355,7 @@ namespace YooAsset
         /// <param name="error">错误描述</param>
         protected void SetError(string error)
         {
-            UnityEngine.Debug.Log($"@@@ SetError error={error}");
+                UnityEngine.Debug.Log($"@@@ SetError error={error}");
             
             if (IsDone)
                 throw new InvalidOperationException(

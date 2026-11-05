@@ -96,7 +96,7 @@ namespace UniFramework.Event
 		public static void AddListener<TEvent>(System.Action<IEventMessage> listener) where TEvent : IEventMessage
 		{
 			System.Type eventType = typeof(TEvent);
-			int eventId = eventType.GetHashCode();
+			int eventId = eventType.ToString().GetHashCode();
 			AddListener(eventId, listener);
 		}
 
@@ -105,7 +105,7 @@ namespace UniFramework.Event
 		/// </summary>
 		public static void AddListener(System.Type eventType, System.Action<IEventMessage> listener)
 		{
-			int eventId = eventType.GetHashCode();
+			int eventId = eventType.ToString().GetHashCode();
 			AddListener(eventId, listener);
 		}
 
@@ -127,7 +127,7 @@ namespace UniFramework.Event
 		public static void RemoveListener<TEvent>(System.Action<IEventMessage> listener) where TEvent : IEventMessage
 		{
 			System.Type eventType = typeof(TEvent);
-			int eventId = eventType.GetHashCode();
+			int eventId = eventType.ToString().GetHashCode();
 			RemoveListener(eventId, listener);
 		}
 
@@ -136,7 +136,7 @@ namespace UniFramework.Event
 		/// </summary>
 		public static void RemoveListener(System.Type eventType, System.Action<IEventMessage> listener)
 		{
-			int eventId = eventType.GetHashCode();
+			int eventId = eventType.ToString().GetHashCode();
 			RemoveListener(eventId, listener);
 		}
 
@@ -158,9 +158,18 @@ namespace UniFramework.Event
 		/// </summary>
 		public static void SendMessage(IEventMessage message)
 		{
-			int eventId = message.GetType().GetHashCode();
+			System.Type eventType = message.GetType();
+			int eventId = eventType.ToString().GetHashCode();
 			SendMessage(eventId, message);
 		}
+		
+		public static void SendMessage<T>(IEventMessage message)
+		{
+			System.Type eventType =  typeof(T);
+			int eventId = eventType.ToString().GetHashCode();
+			SendMessage(eventId, message);
+		}
+
 
 		/// <summary>
 		/// 实时广播事件
@@ -168,17 +177,26 @@ namespace UniFramework.Event
 		public static void SendMessage(int eventId, IEventMessage message)
 		{
 			if (_listeners.ContainsKey(eventId) == false)
+			{
+				Debug.Log($"@@--if (_listeners.ContainsKey(eventId) == false)");
 				return;
+			}
 
 			LinkedList<Action<IEventMessage>> listeners = _listeners[eventId];
+			
 			if (listeners.Count > 0)
 			{
 				var currentNode = listeners.Last;
 				while (currentNode != null)
 				{
+					
 					currentNode.Value.Invoke(message);
 					currentNode = currentNode.Previous;
 				}
+			}
+			else
+			{
+				Debug.Log($"@@--SendMessage 5");
 			}
 		}
 

@@ -147,6 +147,10 @@ namespace YooAsset
         /// 自定义参数：URL 选择策略
         /// </summary>
         public IDownloadUrlPolicy DownloadUrlPolicy { get; private set; }
+        
+        public ICustomPlayMode CustomPlayModePolicy { get; private set; }
+        public EPlayMode BootPlayMode { get; private set; }
+        public bool requestVersionFlag { get; private set; }
         #endregion
 
         /// <summary>
@@ -170,7 +174,8 @@ namespace YooAsset
         /// <inheritdoc />
         public FSLoadPackageManifestOperation LoadPackageManifestAsync(FSLoadPackageManifestOptions options)
         {
-            var operation = new SFSLoadPackageManifestOperation(this, options.PackageVersion, options.Timeout);
+            Debug.Log("@1 SANDBOX");
+            var operation = new SFSLoadPackageManifestOperation(this, options.PackageVersion, options.Timeout,options.RequestVersionFlag);
             return operation;
         }
         /// <inheritdoc />
@@ -308,9 +313,15 @@ namespace YooAsset
             {
                 DownloadUrlPolicy = FileSystemHelper.CastParameter<IDownloadUrlPolicy>(paramName, value);
             }
+            else if (paramName == nameof(EFileSystemParameter.PlayMode))
+            {
+                EPlayMode convertValue = FileSystemHelper.CastParameter<EPlayMode>(paramName, value);
+                Debug.Log("convertValue:"+convertValue);
+                BootPlayMode = convertValue;
+            }
             else
             {
-                throw new ArgumentException($"Unrecognized parameter name: '{paramName}'.", nameof(paramName));
+                throw new ArgumentException($"@1 Unrecognized parameter name: '{paramName}'.", nameof(paramName));
             }
         }
         /// <inheritdoc />

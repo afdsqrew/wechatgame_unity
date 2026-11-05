@@ -13,6 +13,7 @@ internal class FsmUpdatePackageManifest : IStateNode
     }
     void IStateNode.OnEnter()
     {
+        
         PatchStepChangedEvent.SendEventMessage("Updating package manifest.");
         GameManager.Instance.StartCoroutine(UpdateManifest());
     }
@@ -25,22 +26,49 @@ internal class FsmUpdatePackageManifest : IStateNode
 
     private IEnumerator UpdateManifest()
     {
-        var packageName = (string)_machine.GetBlackboardValue("PackageName");
-        var packageVersion = (string)_machine.GetBlackboardValue("PackageVersion");
-        var package = YooAssets.GetPackage(packageName);
-        var options = new LoadPackageManifestOptions(packageVersion, 60);
-        var operation = package.LoadPackageManifestAsync(options);
-        yield return operation;
-
-        if (operation.Status != EOperationStatus.Succeeded)
+        var playMode = (EPlayMode)_machine.GetBlackboardValue("PlayMode");
+        var requestFlag = (bool)_machine.GetBlackboardValue("RequestPackageVersionFlag");
+        if (playMode ==
+            EPlayMode.CustomPlayMode_HostPlayMode && requestFlag == false)
         {
-            Debug.LogWarning(operation.Error);
-            PatchPackageManifestUpdateFailedEvent.SendEventMessage();
-            yield break;
+            var packageName = (string)_machine.GetBlackboardValue("PackageName");
+            var package = YooAssets.GetPackage(packageName);
+            var options = new LoadPackageManifestOptions("", 60,requestFlag);
+            var operation = package.LoadPackageManifestAsync(options);
+            yield return operation;
+
+            if (operation.Status != EOperationStatus.Succeeded)
+            {
+                Debug.LogWarning(operation.Error);
+                PatchPackageManifestUpdateFailedEvent.SendEventMessage();
+                yield break;
+            }
+            else
+            {
+                _machine.ChangeState<FsmCreateDownloader>();
+            }
         }
         else
         {
-            _machine.ChangeState<FsmCreateDownloader>();
+            var packageName = (string)_machine.GetBlackboardValue("PackageName");
+            var packageVersion = (string)_machine.GetBlackboardValue("PackageVersion");
+            var package = YooAssets.GetPackage(packageName);
+            var options = new LoadPackageManifestOptions(packageVersion, 60);
+            var operation = package.LoadPackageManifestAsync(options);
+            yield return operation;
+
+            if (operation.Status != EOperationStatus.Succeeded)
+            {
+                Debug.LogWarning(operation.Error);
+                PatchPackageManifestUpdateFailedEvent.SendEventMessage();
+                yield break;
+            }
+            else
+            {
+                _machine.ChangeState<FsmCreateDownloader>();
+            }
         }
+
+
     }
 }

@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace YooAsset
 {
     /// <summary>
@@ -51,12 +53,14 @@ namespace YooAsset
 
                 if (_requestRemotePackageVersionOp.Status == EOperationStatus.Succeeded)
                 {
+                    Debug.Log("@@@send box success");
                     _steps = ESteps.Done;
                     PackageVersion = _requestRemotePackageVersionOp.PackageVersion;
                     SetResult();
                 }
                 else
                 {
+                    Debug.Log("@@@send box failed");
                     _steps = ESteps.Done;
                     SetError(_requestRemotePackageVersionOp.Error);
                 }

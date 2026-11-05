@@ -155,6 +155,8 @@ namespace YooAsset
         /// 自定义参数：内置文件访问器
         /// </summary>
         internal IBuiltinFileAccessor BuiltinFileAccessor { get; private set; }
+        
+        public EPlayMode BootPlayMode { get; private set; }
         #endregion
 
         /// <summary>
@@ -310,6 +312,12 @@ namespace YooAsset
             else if (paramName == nameof(EFileSystemParameter.BuiltinFileAccessor))
             {
                 BuiltinFileAccessor = FileSystemHelper.CastParameter<IBuiltinFileAccessor>(paramName, value);
+            }
+            else if (paramName == nameof(EFileSystemParameter.PlayMode))
+            {
+                EPlayMode convertValue = FileSystemHelper.CastParameter<EPlayMode>(paramName, value);
+                Debug.Log("convertValue:"+convertValue);
+                BootPlayMode = convertValue;
             }
             else
             {

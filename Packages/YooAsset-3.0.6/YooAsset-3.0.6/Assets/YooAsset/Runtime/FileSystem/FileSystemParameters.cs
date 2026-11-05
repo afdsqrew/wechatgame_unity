@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace YooAsset
 {
@@ -30,6 +31,7 @@ namespace YooAsset
         /// <param name="packageRoot">文件系统的根目录</param>
         public FileSystemParameters(string fileSystemTypeName, string packageRoot)
         {
+            Debug.Log($"@@packageRoot!!={packageRoot}");
             FileSystemTypeName = fileSystemTypeName;
             PackageRoot = packageRoot;
         }
@@ -61,7 +63,7 @@ namespace YooAsset
         /// <returns>创建的文件系统实例</returns>
         internal IFileSystem CreateFileSystem(string packageName)
         {
-            YooLogger.Log($"Package '{packageName}' created file system: '{FileSystemTypeName}'.");
+            YooLogger.Log($"Package '{packageName}' created file system: '{FileSystemTypeName}'. 666 PackageRoot={PackageRoot}" );
 
             Type classType = Type.GetType(FileSystemTypeName);
             if (classType == null)
@@ -208,6 +210,18 @@ namespace YooAsset
             string fileSystemClass = typeof(WebServerFileSystem).FullName;
             var fileSystemParams = new FileSystemParameters(fileSystemClass, packageRoot);
             fileSystemParams.AddParameter(EFileSystemParameter.DisableUnityWebCache, false);
+            return fileSystemParams;
+        }
+        
+        
+        /// <summary>
+        /// 创建默认的内置文件系统参数
+        /// </summary>
+        /// <returns>配置好的文件系统参数实例</returns>
+        public static FileSystemParameters Create_CustomPlayMode_OfflinePlayMode_BuiltinFileSystemParameters()
+        {
+            string fileSystemClass = typeof(BuiltinFileSystem).FullName;
+            var fileSystemParams = new FileSystemParameters(fileSystemClass, null);
             return fileSystemParams;
         }
     }

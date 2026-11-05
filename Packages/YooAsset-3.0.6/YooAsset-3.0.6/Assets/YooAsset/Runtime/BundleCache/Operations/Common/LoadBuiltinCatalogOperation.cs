@@ -35,7 +35,6 @@ namespace YooAsset
         /// <param name="options">加载内置资源目录的操作选项</param>
         internal LoadBuiltinCatalogOperation(LoadBuiltinCatalogOptions options)
         {
-            Debug.Log("@@@ confirm options");
             _options = options;
         }
         protected override void InternalStart()
@@ -51,6 +50,7 @@ namespace YooAsset
             {
                 if (File.Exists(_options.FilePath))
                 {
+                    Debug.Log($"@@@ 存在 _options.FilePath={_options.FilePath}");
                     try
                     {
                         _fileData = File.ReadAllBytes(_options.FilePath);
@@ -64,12 +64,14 @@ namespace YooAsset
                 }
                 else
                 {
+                    Debug.Log($"@@@ 不存在 _options.FilePath={_options.FilePath}");
                     _steps = ESteps.RequestFileData;
                 }
             }
 
             if (_steps == ESteps.RequestFileData)
             {
+                //@@@@这里buildin会从streamingasset读取
                 // 注意：从安装包体里解压数据
                 // 注意：从Web服务器下载数据
                 if (_downloadBytesRequest == null)

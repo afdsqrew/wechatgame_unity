@@ -43,7 +43,7 @@ namespace YooAsset
 
             if (_steps == ESteps.SetPlayMode)
             {
-                
+                Debug.Log("@@ ---init package operation _steps == ESteps.SetPlayMode");
                 if (_options is EditorSimulateModeOptions)
                     _playMode = EPlayMode.EditorSimulateMode;
                 else if (_options is OfflinePlayModeOptions)
@@ -56,10 +56,12 @@ namespace YooAsset
                     _playMode = EPlayMode.CustomPlayMode;
                 else if (_options is WX_Editor_PlayModeOptions)
                     _playMode = EPlayMode.CustomPlayMode_WX_Editor;
+                else if (_options is Custom_HostPlay_PlayModeOptions)
+                    _playMode = EPlayMode.CustomPlayMode_HostPlayMode;
                 else
                     throw new NotImplementedException($"Options type is not implemented: {_options.GetType().Name}.");
 
-                Debug.Log($"@@@ InternalUpdate() ESteps.SetPlayMode _playMode={_playMode}");
+                Debug.Log($"@@@ ---init package operation InternalUpdate() ESteps.SetPlayMode _playMode={_playMode}");
 
                 
                 _steps = ESteps.CheckOptions;
@@ -67,6 +69,7 @@ namespace YooAsset
 
             if (_steps == ESteps.CheckOptions)
             {
+                Debug.Log("@@ ---init package operation _steps == ESteps.CheckOptions");
                 // 检测初始化参数
                 if (_options.BundleLoadingMaxConcurrency <= 0)
                 {
@@ -81,6 +84,7 @@ namespace YooAsset
 
             if (_steps == ESteps.CreateCore)
             {
+                Debug.Log("@@ ---init package operation if (_steps == ESteps.CreateCore)");
                 string packageName = _package.PackageName;
                 var resourceManager = new ResourceManager(packageName);
                 var fileSystemHost = new FileSystemHost(packageName);
@@ -93,6 +97,7 @@ namespace YooAsset
 
             if (_steps == ESteps.InitFileSystem)
             {
+                Debug.Log($"@@ ---init package operation  if (_steps == ESteps.InitFileSystem)");
                 if (_initializeFileSystemOp == null)
                 {
                     if (_playMode == EPlayMode.EditorSimulateMode)
@@ -123,11 +128,14 @@ namespace YooAsset
                    }
                    else if (_playMode == EPlayMode.CustomPlayMode_WX_Editor)
                    {
-                       Debug.Log("@@@ WX_Editor_PlayModeOptions _fileSystemHost.InitializeAsync");
                        var initializeParameters = _options as WX_Editor_PlayModeOptions;
                        _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.WebServerFileSystemParameters, initializeParameters.WebNetworkFileSystemParameters);
                    }
-                   
+                   else if (_playMode == EPlayMode.CustomPlayMode_HostPlayMode)
+                   {
+                       var initializeParameters = _options as Custom_HostPlay_PlayModeOptions;
+                       _initializeFileSystemOp = _fileSystemHost.InitializeAsync(initializeParameters.Custom_HostPlay_SystemParameters, initializeParameters.Custom_HostPlay_CacheFileSystemParameters);
+                   }
                     else
                     {
                         Debug.Log($"@@@ !!! Play mode is not implemented: {_playMode}.");

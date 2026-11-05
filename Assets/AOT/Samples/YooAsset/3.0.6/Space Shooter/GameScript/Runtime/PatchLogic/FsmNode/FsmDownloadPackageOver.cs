@@ -1,4 +1,5 @@
 ﻿using UniFramework.Machine;
+using UnityEngine;
 
 internal class FsmDownloadPackageOver : IStateNode
 {
@@ -10,6 +11,8 @@ internal class FsmDownloadPackageOver : IStateNode
     }
     void IStateNode.OnEnter()
     {
+        PatchManager.SaveVersion();
+        
         PatchStepChangedEvent.SendEventMessage("Resource files download completed.");
         _machine.ChangeState<FsmClearCacheBundle>();
     }

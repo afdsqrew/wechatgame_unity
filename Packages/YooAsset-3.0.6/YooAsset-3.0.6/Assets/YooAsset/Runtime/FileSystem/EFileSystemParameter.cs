@@ -160,5 +160,7 @@ namespace YooAsset
         /// 内置文件访问器 <see cref="IBuiltinFileAccessor"/>
         /// </summary>
         BuiltinFileAccessor,
+        
+        PlayMode,
     }
 }
