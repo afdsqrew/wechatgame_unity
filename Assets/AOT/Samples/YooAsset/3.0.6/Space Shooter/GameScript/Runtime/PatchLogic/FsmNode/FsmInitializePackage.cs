@@ -90,6 +90,7 @@ internal class FsmInitializePackage : IStateNode
 #else
             var createParameters = new WebPlayModeOptions();
             createParameters.WebServerFileSystemParameters = FileSystemParameters.CreateDefaultWebServerFileSystemParameters();
+            AddDecryptor(createParameters.WebServerFileSystemParameters);
             initializationOperation = package.InitializePackageAsync(createParameters);
 #endif
         }
@@ -154,6 +155,23 @@ internal class FsmInitializePackage : IStateNode
             createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.DownloadWatchdogTimeout, 10);
             createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.PlayMode, playMode);
             createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.InstallCleanupMode, EInstallCleanupMode.None);
+
+            IManifestDecryptor tManifestDecryptor =
+                new TestManifestDecryptor();
+            
+            IBundleDecryptor tArchiveBundleDecryptor =
+                new TestArchiveBundleDecryptor();
+            
+            IBundleMemoryDecryptor tAssetBundleDecryptor =
+                new TestAssetBundleDecryptor();
+            
+            IBundleMemoryDecryptor tRawBundleDecryptor =
+                new TestRawBundleDecryptor();
+            
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.ManifestDecryptor, tManifestDecryptor);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.ArchiveBundleDecryptor,tArchiveBundleDecryptor);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.AssetBundleDecryptor, tAssetBundleDecryptor);
+            createParameters.CacheFileSystemParameters.AddParameter(EFileSystemParameter.RawBundleDecryptor, tRawBundleDecryptor);
 
             /*
             var createParameters = new Custom_HostPlay_PlayModeOptions();
@@ -247,5 +265,25 @@ internal class FsmInitializePackage : IStateNode
             result.Add($"{_fallbackHostServer}/{fileName}");
             return result;
         }
+    }
+
+    public void AddDecryptor(FileSystemParameters fileSystemParameters)
+    {
+        IManifestDecryptor tManifestDecryptor =
+            new TestManifestDecryptor();
+            
+        IBundleDecryptor tArchiveBundleDecryptor =
+            new TestArchiveBundleDecryptor();
+            
+        IBundleMemoryDecryptor tAssetBundleDecryptor =
+            new TestAssetBundleDecryptor();
+            
+        IBundleMemoryDecryptor tRawBundleDecryptor =
+            new TestRawBundleDecryptor();
+            
+        fileSystemParameters.AddParameter(EFileSystemParameter.ManifestDecryptor, tManifestDecryptor);
+        fileSystemParameters.AddParameter(EFileSystemParameter.ArchiveBundleDecryptor,tArchiveBundleDecryptor);
+        fileSystemParameters.AddParameter(EFileSystemParameter.AssetBundleDecryptor, tAssetBundleDecryptor);
+        fileSystemParameters.AddParameter(EFileSystemParameter.RawBundleDecryptor, tRawBundleDecryptor);
     }
 }

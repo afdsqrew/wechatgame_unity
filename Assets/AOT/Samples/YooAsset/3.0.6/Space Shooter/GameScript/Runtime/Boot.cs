@@ -26,7 +26,7 @@ public class Boot : MonoBehaviour
         GameManager.Instance.SetBoot(this);
         // Initialize event system.
         UniEvent.Initalize();
-
+        
         // Initialize asset system.
         YooAssets.Initialize();
 
